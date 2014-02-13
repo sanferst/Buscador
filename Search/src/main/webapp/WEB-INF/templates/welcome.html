@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{welcome.title}">Title</title>
+	<title th:text="#{welcome.title}">Titulo</title>
 </head>
 
 <body>
@@ -15,22 +15,15 @@
 			<div th:include="include :: logo"></div>
 			
 			<div class="welcome">
-				<p>Welcome <span class="authname" th:text="${authname}">user</span> to TestApp! This application will allow you to do the following: </p>
+				<p>Bienvenido <span class="authname" th:text="${authname}">Usuario</span> a Buscador Web! Esta aplicacion le permitira hacer lo siguiente: </p>
 				<ul>
-					<li>View your Facebook profile</li>
-					<li>View your Twiiter profile</li>
-					<li>Update your Facebook status</li>
-					<li>Tweet a message to Twitter</li>		
+					<li>Ver su perfil de Facebook</li>
+					<li>Ver su perfil de Twitter</li>
+					<li>Actualizar su estado de Facebook</li>
+					<li>Publicar un nuevo Tweet</li>		
 				</ul> 
 				
-				<p>You will need a Facebook or Twitter account to
-				post and access your profile from these social media sites.</p>
-			
-				<p>To know more about this application, please visit the tutorial at
-				<a href="#">Spring Social Tutorial</a>.</p>
-				
-				<p>The GitHub repository is available at
-				<a href="#">spring-social-tutorial</a>.</p>
+				<p>Usted necesita una cuenta de Facebook o Twitter para publicar y acceder a su perfil desde este sitio.</p>
 			</div>
 		</div>
 		<div th:include="include :: footer"></div>

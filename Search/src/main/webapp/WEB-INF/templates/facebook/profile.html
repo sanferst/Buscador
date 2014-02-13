@@ -5,7 +5,7 @@
 <head th:fragment="header">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{'profile.title.' + ${source}}">Title</title>
+	<title th:text="#{'profile.title.' + ${source}}">titulo</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 			<div th:include="include :: logo"></div>
 			
 			<div class="profile">
-				<h3 th:text="#{'profile.h3.' + ${source}}">Your Social Media Profile</h3>
+				<h3 th:text="#{'profile.h3.' + ${source}}">Tu Perfil</h3>
 				<div class="pic">
 					<img src="#" th:src="@{'http://graph.facebook.com/' +  ${profileInfo.id}} + '/picture'" alt="profile image"/>
 					<span th:text="${profileInfo.name}">John Smith</span>

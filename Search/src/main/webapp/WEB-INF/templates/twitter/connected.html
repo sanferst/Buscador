@@ -15,15 +15,15 @@
 			<div th:include="include :: logo"></div>
 			
 			<div class="connect">
-				<h3 th:text="#{connected.h3.tw}">Success! You have connected to Social Site!</h3>
+				<h3 th:text="#{connected.h3.tw}">¡Éxito! Se ha conectado al Sitio social!</h3>
 				<p>
 					<span th:text="#{app.name}">App Name</span>
-					<span> is connected to your Social Site account.
-					Click the button if you wish to disconnect.</span>
+					<span> Se ha conectado a su cuenta.
+					Click en el botón si desea desconectarse.</span>
 				</p>
 				
 				<form id="disconnect" action="#" th:action="@{#{${'disconnect.url.tw'}}}" method="post">
-					<button type="submit" th:text="#{disconnect.button.tw}">Disconnect from Social</button>	
+					<button type="submit" th:text="#{disconnect.button.tw}">Desconectar</button>	
 					<input type="hidden" name="_method" value="delete" />
 				</form>
 			</div>

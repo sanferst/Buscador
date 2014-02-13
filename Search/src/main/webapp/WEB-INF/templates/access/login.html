@@ -5,7 +5,7 @@
 <head th:fragment="header">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{login.title}">Sign in</title>
+	<title th:text="#{login.title}">Iniciar Sesión</title>
 </head>
 
 <body>
@@ -16,17 +16,17 @@
 			<div class="login">
 				<form action="#" th:action="@{/j_spring_security_check}" method="post" >
 					<fieldset>
-						<label for="j_username" th:text="#{login.username}">Username</label>
+						<label for="j_username" th:text="#{login.username}">Usuario</label>
 						<input id="j_username" name="j_username" type="text"/>
-						<label for="j_password" th:text="#{login.password}">Password</label>
+						<label for="j_password" th:text="#{login.password}">Clave</label>
 						<input id="j_password" name="j_password" type="password"/>
-						<button type="submit" th:text="#{login.button}">Submit</button>
+						<button type="submit" th:text="#{login.button}">Enviar</button>
 					</fieldset>
 				</form>
-				<p><a href="#" th:href="@{/signup}" th:text="#{login.noaccount}">No account? Create one now!</a></p>
+				<p><a href="#" th:href="@{/signup}" th:text="#{login.noaccount}">No tiene una cuenta? Cree una ahora!</a></p>
 			</div>
 			
-			<p class="status" th:if="${not #strings.isEmpty(status)}" th:text="#{'status.' + ${status}}">Status</p>
+			<p class="status" th:if="${not #strings.isEmpty(status)}" th:text="#{'status.' + ${status}}">Estado</p>
 		</div>
 		<div th:include="include :: footer"></div>
 	</div>

@@ -5,7 +5,7 @@
 <head th:fragment="header">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{connected.title.fb}">Title</title>
+	<title th:text="#{connected.title.fb}">Titulo</title>
 </head>
 
 <body>
@@ -15,15 +15,15 @@
 			<div th:include="include :: logo"></div>
 			
 			<div class="connect">
-				<h3 th:text="#{connected.h3.fb}">Success! You have connected to Social Site!</h3>
+				<h3 th:text="#{connected.h3.fb}">¡Éxito! Se ha conectado al Sitio social!</h3>
 				<p>
 					<span th:text="#{app.name}">App Name</span>
-					<span> is connected to your Social Site account.
-					Click the button if you wish to disconnect.</span>
+					<span> Se ha conectado a su cuenta.
+					Click en el botón si desea desconectarse.</span>
 				</p>
 				
 				<form id="disconnect" action="#" th:action="@{#{${'disconnect.url.fb'}}}" method="post">
-					<button type="submit" th:text="#{disconnect.button.fb}">Disconnect from Social</button>	
+					<button type="submit" th:text="#{disconnect.button.fb}">Desconectar</button>	
 					<input type="hidden" name="_method" value="delete" />
 				</form>
 			</div>

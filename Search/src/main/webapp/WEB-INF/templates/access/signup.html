@@ -16,7 +16,7 @@
 			<div class="login signup">
 				<form action="#" th:action="@{/signup}" method="post" >
 					<fieldset>
-						<label for="firstName">Primer Nombre</label>
+						<label for="firstName">Nombre</label>
 						<input id="firstName" name="firstName" size="47" maxlength="50" type="text"/>
 						<label for="lastName">Apellido</label>
 						<input id="lastName" name="lastName" size="47" maxlength="50" type="text"/>
@@ -24,7 +24,7 @@
 						<input id="username" name="username" size="47" maxlength="50" type="text"/>
 						<label for="password">Clave</label>
 						<input id="password" name="password" size="47" maxlength="50" type="password"/>
-						<label for="repassword">Repite la Clave</label>
+						<label for="repassword">Repita la Clave</label>
 						<input id="repassword" name="repassword" size="47" maxlength="50" type="password"/>
 						<button type="submit" th:text="#{signup.button}">Guardar</button>
 					</fieldset>
