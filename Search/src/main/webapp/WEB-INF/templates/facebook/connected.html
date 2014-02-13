@@ -15,11 +15,11 @@
 			<div th:include="include :: logo"></div>
 			
 			<div class="connect">
-				<h3 th:text="#{connected.h3.fb}">¡Éxito! Se ha conectado al Sitio social!</h3>
+				<h3 th:text="#{connected.h3.fb}">¡Exito! Se ha conectado al Sitio social!</h3>
 				<p>
 					<span th:text="#{app.name}">App Name</span>
 					<span> Se ha conectado a su cuenta.
-					Click en el botón si desea desconectarse.</span>
+					Click en el boton si desea desconectarse.</span>
 				</p>
 				
 				<form id="disconnect" action="#" th:action="@{#{${'disconnect.url.fb'}}}" method="post">
