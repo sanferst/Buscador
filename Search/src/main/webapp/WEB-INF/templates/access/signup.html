@@ -5,7 +5,7 @@
 <head th:fragment="header">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{login.title}">Login</title>
+	<title th:text="#{login.title}">Loguearse</title>
 </head>
 
 <body style="border: 0px solid">
@@ -16,23 +16,23 @@
 			<div class="login signup">
 				<form action="#" th:action="@{/signup}" method="post" >
 					<fieldset>
-						<label for="firstName">First Name</label>
+						<label for="firstName">Primer Nombre</label>
 						<input id="firstName" name="firstName" size="47" maxlength="50" type="text"/>
-						<label for="lastName">Last Name</label>
+						<label for="lastName">Apellido</label>
 						<input id="lastName" name="lastName" size="47" maxlength="50" type="text"/>
-						<label for="username">Username</label>
+						<label for="username">Usuario</label>
 						<input id="username" name="username" size="47" maxlength="50" type="text"/>
-						<label for="password">Password</label>
+						<label for="password">Clave</label>
 						<input id="password" name="password" size="47" maxlength="50" type="password"/>
-						<label for="repassword">Retype password</label>
+						<label for="repassword">Repite la Clave</label>
 						<input id="repassword" name="repassword" size="47" maxlength="50" type="password"/>
-						<button type="submit" th:text="#{signup.button}">Submit</button>
+						<button type="submit" th:text="#{signup.button}">Guardar</button>
 					</fieldset>
 				</form>
-				<p><a href="#" th:href="@{/login}" th:text="#{signup.hasaccount}">Already have an account? Sign in!</a></p>
+				<p><a href="#" th:href="@{/login}" th:text="#{signup.hasaccount}">Ahora tienes una cuenta!!! Ingresa!!</a></p>
 			</div>
 			
-			<p class="status" th:if="${not #strings.isEmpty(status)}" th:text="#{'status.' + ${status}}">Status</p>
+			<p class="status" th:if="${not #strings.isEmpty(status)}" th:text="#{'status.' + ${status}}">Estado</p>
 		</div>	
 		<div th:include="include :: footer"></div>
 	</div>
