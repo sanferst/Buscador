@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{connect.title.fb}">Title</title>
+	<title th:text="#{connect.title.fb}">Titulo</title>
 </head>
 
 <body>
@@ -15,15 +15,14 @@
 			<div th:include="include :: logo"></div>
 
 			<div class="connect">
-				<h3 th:text="#{connect.h3.fb}">Connect to Social Site</h3>
+				<h3 th:text="#{connect.h3.fb}">Conectando al sitio...</h3>
 				<div>
 					<form action="#" th:action="@{#{${'connect.form.action.fb'}}}" method="POST">
 						<input type="hidden" name="scope" value="publish_stream,offline_access" />
-						<p th:text="#{connect.message.fb}">You haven't created any connections with 
-							Social Media yet. Click the button to create a connection between your account and 
-							your Social Media profile. (You'll be redirected to Twitter where you'll be
-							asked to authorize the connection.)</p>
-						<button type="submit" th:text="#{connect.button.fb}">Connect</button>
+						<p th:text="#{connect.message.fb}">Usted no se ha creado ninguna conexión social con el sitio todavía. 
+                                                    Haga clic en el botón para crear una conexión a su cuenta y su perfil del sitio social. 
+                                                    (Se le redireccionará a Facebook, donde se le pedirá que autorice la conexión.)</p>
+						<button type="submit" th:text="#{connect.button.fb}">Conectar</button>
 					</form>
 				</div>
 			</div>

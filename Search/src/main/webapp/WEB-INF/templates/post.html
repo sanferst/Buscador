@@ -5,7 +5,7 @@
 <head th:fragment="header">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
-	<title th:text="#{'post.title.' + ${source}}">Title</title>
+	<title th:text="#{'post.title.' + ${source}}">Titulo</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 			<div th:include="include :: logo"></div>
 	
 			<div class="postbox">
-				<h3 th:text="#{${'post.form.legend.' + source}}">Post a message</h3>
+				<h3 th:text="#{${'post.form.legend.' + source}}">Publicar un mensaje</h3>
 						
 				<form action="#" th:action="@{#{${'post.form.action.' + source}}}" method="post" >
 					<fieldset>
