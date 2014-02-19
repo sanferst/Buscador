@@ -21,7 +21,7 @@
                 <tr th:each="item : ${items}">
                     <td th:text="${item.titulo}">1</td>
                     <td>
-                        <a class="edit-button" href="#" th:href="@{/users/edit(id=${u.title})}"></a>
+                        <a class="edit-button" href="#" th:href="@{/users/edit(id=${item.titulo})}"></a>
                     </td>
                 </tr>
 
