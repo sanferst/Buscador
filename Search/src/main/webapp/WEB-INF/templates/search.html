@@ -45,17 +45,6 @@
                     <div id="search_query">&nbsp;</div>
 
                     <script type="text/javascript" charset="utf-8">
-                        // recuperamos la informacion que nos ha enviado el servidor
-                        function procesarRespuesta(ajaxResponse)
-                        { 
-                            // observa que aquí asumimos que el resultado es un objeto 
-                            // serializado en JSON, razón por la cual tomamos este dato
-                            // y lo procesamos para recuperar un objeto que podamos
-                            // manejar fácilmente
-                            if (typeof ajaxResponse == "string")
-                                ajaxResponse = $.parseJSON(ajaxResponse);
-                            return ajaxResponse;
-                        }
                         
                         // recupera la informacion de los registros de la consulta
                         function recuperarConsulta_callback(ajaxResponse, textStatus)
@@ -66,21 +55,7 @@
                                 // no se encontraron registros :(
                                 return;
                             }
- 
-                            // recupera la instancia de la tabla en donde colocaremos los 
-                            // registros que recuperamos y elimina todos salvo el primero, 
-                            // que es donde se encuentra el encabezado de la tabla
-                            var $tabla = $("#tblAlumnos");
-                            $tabla.find("tr:gt(0)").remove();
- 
-                            // ahora, para cada registro que recuperamos
-                            var registro;
-                            for (var idx in registros)
-                            {
-                                registro = registros[idx];
-                                
   
-                            } 
                         }
                         $(document).ready(function() {
                             window.visualSearch = VS.init({
@@ -106,7 +81,7 @@
                                             // puede ser "get" y "post"
                                             type: "get",
                                             // el módulo que hará la búsqueda
-                                            url: "http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest",
+                                            url: "/busqueda/consultar",
                                             // los datos para la consulta
                                             data: data,
                                             // que hacer si funciona 
