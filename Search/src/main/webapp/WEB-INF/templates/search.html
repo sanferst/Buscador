@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="resources/lib/css/reset.css" type="text/css" media="screen" charset="utf-8"/>
         <link rel="stylesheet" href="resources/lib/css/icons.css" type="text/css" media="screen" charset="utf-8"/>
         <link rel="stylesheet" href="resources/lib/css/workspace.css" type="text/css" media="screen" charset="utf-8"/>
-        
+
         <script src="resources/js/vendor/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="vendor/backported/jquery-1.4.4.js" type="text/javascript" charset="utf-8"></script> -->
         <script src="resources/js/vendor/jquery.ui.core.js" type="text/javascript" charset="utf-8"></script>
@@ -45,10 +45,47 @@
                     <div id="search_query">&nbsp;</div>
 
                     <script type="text/javascript" charset="utf-8">
+                        // recuperamos la informacion que nos ha enviado el servidor
+                        function procesarRespuesta(ajaxResponse)
+                        { 
+                            // observa que aquí asumimos que el resultado es un objeto 
+                            // serializado en JSON, razón por la cual tomamos este dato
+                            // y lo procesamos para recuperar un objeto que podamos
+                            // manejar fácilmente
+                            if (typeof ajaxResponse == "string")
+                                ajaxResponse = $.parseJSON(ajaxResponse);
+                            return ajaxResponse;
+                        }
+                        
+                        // recupera la informacion de los registros de la consulta
+                        function recuperarConsulta_callback(ajaxResponse, textStatus)
+                        {
+                            var registros = procesarRespuesta(ajaxResponse);
+                            if (!registros)
+                            {
+                                // no se encontraron registros :(
+                                return;
+                            }
+ 
+                            // recupera la instancia de la tabla en donde colocaremos los 
+                            // registros que recuperamos y elimina todos salvo el primero, 
+                            // que es donde se encuentra el encabezado de la tabla
+                            var $tabla = $("#tblAlumnos");
+                            $tabla.find("tr:gt(0)").remove();
+ 
+                            // ahora, para cada registro que recuperamos
+                            var registro;
+                            for (var idx in registros)
+                            {
+                                registro = registros[idx];
+                                
+  
+                            } 
+                        }
                         $(document).ready(function() {
                             window.visualSearch = VS.init({
                                 container  : $('#search_box_container'),
-                                query      : 'country: "United States" account: 5-samuel "U.S. State": California',
+                                query      : '',
                                 showFacets : true,
                                 readOnly   : false,
                                 unquotable : [
@@ -63,6 +100,18 @@
                                         $query.stop().animate({opacity : 1}, {duration: 300, queue: false});
                                         $query.html('<span class="raquo">&raquo;</span> You searched for: <b>' + searchCollection.serialize() + '</b>');
                                         clearTimeout(window.queryHideDelay);
+                                        var data = "q=" + query;
+                                        $.ajax(
+                                        {
+                                            // puede ser "get" y "post"
+                                            type: "get",
+                                            // el módulo que hará la búsqueda
+                                            url: "http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest",
+                                            // los datos para la consulta
+                                            data: data,
+                                            // que hacer si funciona 
+                                            success: recuperarConsulta_callback
+                                        });
                                         window.queryHideDelay = setTimeout(function() {
                                             $query.animate({
                                                 opacity : 0
