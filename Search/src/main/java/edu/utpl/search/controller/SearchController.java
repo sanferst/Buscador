@@ -48,7 +48,7 @@ public class SearchController {
         template.setMessageConverters(messageConverters);
 
         
-        ResultadoOCW response = template.getForObject("http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest?q = " + q, ResultadoOCW.class);
+        ResultadoOCW response = template.getForObject("http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest?q=" + q, ResultadoOCW.class);
 
         System.out.println("consultar: " + q);
         model.addAttribute("resultados", response);
