@@ -43,6 +43,7 @@
                 <div class="postbox">
                     <div id="search_box_container"></div>
                     <div id="search_query">&nbsp;</div>
+                    <div id="resultado"></div>
 
                     <script type="text/javascript" charset="utf-8">
                         
@@ -50,7 +51,7 @@
                         function recuperarConsulta_callback(ajaxResponse, textStatus)
                         {
                             
-                           
+                           $("#resultado").html(ajaxResponse);
                             console.log("resultado: " + ajaxResponse);
                         }
                         $(document).ready(function() {
