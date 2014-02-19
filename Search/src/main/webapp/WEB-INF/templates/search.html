@@ -49,13 +49,9 @@
                         // recupera la informacion de los registros de la consulta
                         function recuperarConsulta_callback(ajaxResponse, textStatus)
                         {
-                            var registros = procesarRespuesta(ajaxResponse);
-                            if (!registros)
-                            {
-                                // no se encontraron registros :(
-                                return;
-                            }
-  
+                            
+                           
+                            console.log("resultado: " + ajaxResponse);
                         }
                         $(document).ready(function() {
                             window.visualSearch = VS.init({
