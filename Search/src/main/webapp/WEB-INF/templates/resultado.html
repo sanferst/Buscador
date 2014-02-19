@@ -13,13 +13,14 @@
             <thead>
                 <tr>
                     <th scope="col" th:text="#{item.ocw.titulo}">Id</th>
-                 
+                    <th scope="col" th:text="#{item.ocw.Universidad}">Universida</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="item : ${items}">
                     <td th:text="${item.titulo}">1</td>
+                    <td th:text="${item.universidad}">1</td>
                     <td>
                         <a class="edit-button" href="#" th:href="@{/users/edit(id=${item.titulo})}"></a>
                     </td>
