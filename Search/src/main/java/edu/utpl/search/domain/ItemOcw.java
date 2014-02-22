@@ -24,7 +24,15 @@ public class ItemOcw {
     private String universidad;
     @JsonProperty("university_url")
     private String universidadUrl;
-
+    @JsonProperty("description")
+    private String description;
+    @JsonProperty("uri")
+    private String uri;
+    @JsonProperty("similar")
+    private String similar;
+    @JsonProperty("resourceType")
+    private String resourceType; 
+    
     public String getTitulo() {
         return titulo;
     }
@@ -63,5 +71,29 @@ public class ItemOcw {
 
     public void setUniversidadUrl(String universidadUrl) {
         this.universidadUrl = universidadUrl;
+    }
+      public String getDescription(){
+      return description;
+    }
+    public void setDescription(String description){
+       this.description = description;
+    }  
+    public String getUri(){
+      return uri;
+    }
+    public void setUri(String uri){
+       this.uri = uri;
+    }
+    public String getSimilar(){
+      return similar;
+    }
+    public void setSimilar(String similar){
+       this.similar = similar;
+    }   
+    public String getResourceType(){
+      return resourceType;
+    }
+    public void setResourceType(String resourceType){
+       this.resourceType = resourceType;
     }
 }

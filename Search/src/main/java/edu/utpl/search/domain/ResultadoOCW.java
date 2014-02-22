@@ -19,6 +19,8 @@ public class ResultadoOCW {
     private String query;
     @JsonProperty("date")
     private String fecha;
+    @JsonProperty("version")
+    private String version;
     @JsonProperty("rows")
     private int rows;
     @JsonProperty("time")
@@ -64,5 +66,12 @@ public class ResultadoOCW {
 
     public void setRows(int rows) {
         this.rows = rows;
+    }
+     public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }
