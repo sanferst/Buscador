@@ -10,7 +10,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  *
- * @author criss
+ * @author 
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultadoOCW {

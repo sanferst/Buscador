@@ -1,7 +1,5 @@
 package edu.utpl.search.controller;
 
-import java.util.List;
-
 import edu.utpl.search.domain.Role;
 import edu.utpl.search.domain.User;
 import edu.utpl.search.repository.UserRepository;
@@ -9,17 +7,18 @@ import edu.utpl.search.response.UserDto;
 import edu.utpl.search.service.UserService;
 import edu.utpl.search.util.RoleUtil;
 import edu.utpl.search.util.UserMapper;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.ui.ModelMap;
 
 @Controller
 @RequestMapping("/users")

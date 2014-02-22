@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
 import org.codehaus.jackson.annotate.JsonBackReference;
 
 @Entity(name="role")

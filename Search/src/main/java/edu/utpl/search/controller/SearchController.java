@@ -1,16 +1,9 @@
 package edu.utpl.search.controller;
 
 import edu.utpl.search.domain.ResultadoOCW;
-import edu.utpl.search.domain.User;
-import edu.utpl.search.util.UserMapper;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.xml.transform.Source;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
