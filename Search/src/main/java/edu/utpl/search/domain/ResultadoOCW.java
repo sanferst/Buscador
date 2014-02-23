@@ -12,6 +12,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *
  * @author 
  */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultadoOCW {
 
