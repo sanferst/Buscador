@@ -22,34 +22,56 @@ public class ItemSimilar implements Serializable {
     @JsonProperty("url")
     private String url;
     
-    @JsonProperty("Id")
+    @JsonProperty("id")
     private String id;
+    
     @JsonProperty("title")
     private String title;
+    
     @JsonProperty("university_name")
     private String universidad;
-    @JsonProperty("Description")
+    
+    @JsonProperty("description")
     private String description;
+    
     @JsonProperty("license")
     private String license;
+    
     @JsonProperty("continent")
     private String continet;
+    
     @JsonProperty("country")
     private String country;
+    
     @JsonProperty("city")
     private String city;
+    
     @JsonProperty("image")
     private String image;
+    
     @JsonProperty("resourseType")
     private String resourseType;
+    
     @JsonProperty("resourseType")
     private String address;
-    @JsonProperty("languaje")
-    private String languaje;
-    @JsonProperty("TextConcat")
-    private String TextConcat;
+    
+    @JsonProperty("language")
+    private String language;
+    
+    @JsonProperty("textConcat")
+    private String textConcat;
+    
     @JsonProperty("score")
+    private String score;
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+    
     public String getStore() {
         return store;
     }
@@ -103,11 +125,11 @@ public class ItemSimilar implements Serializable {
     }
 
     public String getLanguaje() {
-        return languaje;
+        return language;
     }
 
     public String getTextConcat() {
-        return TextConcat;
+        return textConcat;
     }
 
     public void setStore(String store) {
@@ -162,11 +184,11 @@ public class ItemSimilar implements Serializable {
         this.address = address;
     }
 
-    public void setLanguaje(String languaje) {
-        this.languaje = languaje;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
-    public void setTextConcat(String TextConcat) {
-        this.TextConcat = TextConcat;
+    public void setTextConcat(String textConcat) {
+        this.textConcat = textConcat;
     }
 }
