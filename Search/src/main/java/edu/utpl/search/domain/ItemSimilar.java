@@ -18,8 +18,10 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class ItemSimilar implements Serializable {
     @JsonProperty("store")
     private String store;
+    
     @JsonProperty("url")
     private String url;
+    
     @JsonProperty("Id")
     private String id;
     @JsonProperty("title")

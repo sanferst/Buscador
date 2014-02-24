@@ -13,19 +13,24 @@ import org.codehaus.jackson.annotate.JsonProperty;
  *
  * @author Santiago
  */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultadoSimilar implements Serializable {
-   @JsonProperty("q")
+
+    @JsonProperty("q")
     private String query;
+    
     @JsonProperty("date")
     private String fecha;
+    
     @JsonProperty("version")
     private String version;
+    
     @JsonProperty("rows")
     private int rows;
+    
     @JsonProperty("time")
     private double tiempo;
+    
     @JsonProperty("results")
     private List<ItemSimilar> itemSimilar;
 

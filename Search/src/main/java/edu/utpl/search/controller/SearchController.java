@@ -3,6 +3,7 @@ package edu.utpl.search.controller;
 import edu.utpl.search.domain.ItemOcw;
 import edu.utpl.search.domain.ResultadoDetalleOCW;
 import edu.utpl.search.domain.ResultadoOCW;
+import edu.utpl.search.domain.ResultadoSimilar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -73,5 +74,23 @@ public class SearchController {
         model.addAttribute("resultados", response);
         model.addAttribute("items", response.getItemDetalleOCW());
         return "detalle";
+    }
+    
+    @RequestMapping(value = "/similar")
+    public String similar(int id, ModelMap model) {
+        RestTemplate template = new RestTemplate();
+        // Message Converters
+        List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+        messageConverters.add(new FormHttpMessageConverter());
+        messageConverters.add(new SourceHttpMessageConverter<Source>());
+        messageConverters.add(new StringHttpMessageConverter());
+        messageConverters.add(new MappingJacksonHttpMessageConverter());
+        template.setMessageConverters(messageConverters);
+
+        
+        ResultadoSimilar response = template.getForObject("http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest/similar?id=" + id, ResultadoSimilar.class);
+        model.addAttribute("resultados", response);
+        model.addAttribute("items", response.getItemSimilar());
+        return "similar";
     }
 }
