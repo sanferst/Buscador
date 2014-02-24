@@ -17,36 +17,50 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class ItemDetalleOCW implements Serializable {
     @JsonProperty("store")
     private String store;
+    
     @JsonProperty("url")
     private String url;
-    @JsonProperty("Id")
+    
+    @JsonProperty("id")
     private String id;
+    
     @JsonProperty("title")
     private String title;
+    
     @JsonProperty("university_name")
     private String universidad;
-    @JsonProperty("Description")
+    
+    @JsonProperty("description")
     private String description;
+    
     @JsonProperty("license")
     private String license;
-    @JsonProperty("Continent")
+    
+    @JsonProperty("continent")
     private String continet;
+    
     @JsonProperty("country")
     private String country;
+    
     @JsonProperty("city")
     private String city;
+    
     @JsonProperty("image")
     private String image;
-    @JsonProperty("resourseType")
-    private String resourseType;
-    @JsonProperty("resourseType")
-    private String address;
-    @JsonProperty("languaje")
-    private String languaje;
-    @JsonProperty("TextConcat")
-    private String TextConcat;
-    @JsonProperty("score")
     
+    @JsonProperty("resourceType")
+    private String resourseType;
+    
+    @JsonProperty("address")
+    private String address;
+    
+    @JsonProperty("language")
+    private String languaje;
+    
+    @JsonProperty("textConcat")
+    private String TextConcat;
+    
+    @JsonProperty("score")
     private String score;
 
     public String getStore() {

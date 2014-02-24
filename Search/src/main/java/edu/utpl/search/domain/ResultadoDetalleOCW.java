@@ -20,11 +20,11 @@ public class ResultadoDetalleOCW {
     private String fecha;
     @JsonProperty("version")
     private int version;
-    @JsonProperty("time")
-    private double rows;
     @JsonProperty("rows")
-    private double time;
+    private double rows;
     @JsonProperty("time")
+    private double time;
+    @JsonProperty("results")
     private List<ItemDetalleOCW> itemDetalleOCW;
 
     public String getQuery() {

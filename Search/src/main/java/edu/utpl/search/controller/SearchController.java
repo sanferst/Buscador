@@ -1,6 +1,7 @@
 package edu.utpl.search.controller;
 
 import edu.utpl.search.domain.ItemOcw;
+import edu.utpl.search.domain.ResultadoDetalleOCW;
 import edu.utpl.search.domain.ResultadoOCW;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,19 @@ public class SearchController {
     
     @RequestMapping(value = "/detallar")
     public String detallar(int id, ModelMap model) {
+        RestTemplate template = new RestTemplate();
+        // Message Converters
+        List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+        messageConverters.add(new FormHttpMessageConverter());
+        messageConverters.add(new SourceHttpMessageConverter<Source>());
+        messageConverters.add(new StringHttpMessageConverter());
+        messageConverters.add(new MappingJacksonHttpMessageConverter());
+        template.setMessageConverters(messageConverters);
+
         
+        ResultadoDetalleOCW response = template.getForObject("http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest/course?id=" + id, ResultadoDetalleOCW.class);
+        model.addAttribute("resultados", response);
+        model.addAttribute("items", response.getItemDetalleOCW());
         return "detalle";
     }
 }
