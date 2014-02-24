@@ -32,6 +32,7 @@
 
                     <script type="text/javascript" charset="utf-8">
                         $(document).ready(function() {
+                            //Para accion de formulario
                             $( "#formBusqueda" ).submit(function( event ) {
                                 console.log($('#campoBusqueda').val());
                                 event.preventDefault();
@@ -47,7 +48,8 @@
                                     // que hacer si funciona 
                                     success: recuperarConsulta_callback
                                 });
-                             });    
+                             });
+                             
                         });
                         
                         // recupera la informacion de los registros de la consulta

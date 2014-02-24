@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head th:fragment="header">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
+        <link rel="stylesheet" href="resources/lib/css/reset.css" type="text/css" media="screen" charset="utf-8"/>
+        <link rel="stylesheet" href="resources/lib/css/icons.css" type="text/css" media="screen" charset="utf-8"/>
+        <link rel="stylesheet" href="resources/lib/css/workspace.css" type="text/css" media="screen" charset="utf-8"/>
+
+        <script src="resources/js/vendor/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+        <title>Title</title>
+    </head>
+
+    <body>
+        <div class="skin">
+            <div class="content">
+                <div th:include="include :: menu"></div>
+                <div th:include="include :: logo"></div>
+
+                <div class="postbox">
+                </div>
+            </div>
+            <div th:include="include :: footer"></div>
+        </div>	
+    </body>
+</html>
