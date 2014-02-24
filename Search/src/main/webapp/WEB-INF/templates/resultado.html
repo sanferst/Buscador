@@ -8,7 +8,9 @@
     </head>
 
     <body>
-
+        Tiempo: <label th:text="${resultados.tiempo}" ></label>
+        Usted consulto: <label th:text="${resultados.query}"></label>
+        Consulto el: <label th:text="${resultados.fecha}"></label>
         <table class="box-table-a">
             <caption th:text="#{users.table.caption}">Cursos OCW</caption>
             <thead>
