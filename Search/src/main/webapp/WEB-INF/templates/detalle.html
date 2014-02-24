@@ -20,6 +20,26 @@
                 <div th:include="include :: logo"></div>
 
                 <div class="postbox">
+                    <table class="box-table-a">
+                        <caption>Detalle OCW</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" th:text="#{item.ocw.titulo}">Titulo</th>
+                                <th scope="col" th:text="#{item.ocw.Universidad}">Universidad</th>
+                                <th scope="col" th:text="#{item.ocw.Country}">Pais</th>
+                                <th scope="col" th:text="#{item.ocw.License}">Licencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item : ${items}">
+                                <td th:text="${item.title}">1</td>
+                                <td th:text="${item.universidad}">1</td>
+                                <td th:text="${item.country}">1</td>
+                                <td th:text="${item.city}">1</td>
+                                <td th:text="${item.license}">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div th:include="include :: footer"></div>
