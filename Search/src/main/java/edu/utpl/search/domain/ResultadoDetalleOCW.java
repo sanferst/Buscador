@@ -19,9 +19,9 @@ public class ResultadoDetalleOCW {
     @JsonProperty("date")
     private String fecha;
     @JsonProperty("version")
-    private int version;
+    private String version;
     @JsonProperty("rows")
-    private double rows;
+    private int rows;
     @JsonProperty("time")
     private double time;
     @JsonProperty("results")
@@ -35,11 +35,11 @@ public class ResultadoDetalleOCW {
         return fecha;
     }
 
-    public int getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public double getRows() {
+    public int getRows() {
         return rows;
     }
 
@@ -59,11 +59,11 @@ public class ResultadoDetalleOCW {
         this.fecha = fecha;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 
-    public void setRows(double rows) {
+    public void setRows(int rows) {
         this.rows = rows;
     }
 
