@@ -31,7 +31,16 @@ public class ItemOcw {
     @JsonProperty("similar")
     private String similar;
     @JsonProperty("resourceType")
-    private String resourceType; 
+    private String resourceType;
+    private String idCourse;
+
+    public String getIdCourse() {
+        return idCourse;
+    }
+
+    public void setIdCourse(String idCourse) {
+        this.idCourse = idCourse;
+    }
     
     public String getTitulo() {
         return titulo;
