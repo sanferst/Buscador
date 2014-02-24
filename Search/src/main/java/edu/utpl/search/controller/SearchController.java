@@ -1,8 +1,10 @@
 package edu.utpl.search.controller;
 
+import edu.utpl.search.domain.ItemOcw;
 import edu.utpl.search.domain.ResultadoOCW;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.xml.transform.Source;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -43,9 +45,20 @@ public class SearchController {
         
         ResultadoOCW response = template.getForObject("http://carbono.utpl.edu.ec:8080/WSSearcher/webresources/serendipityrest?q=" + q, ResultadoOCW.class);
 
-        System.out.println("consultar: " + q);
+        for (ItemOcw item : response.getItemsOcw()) {
+            //Buscar posicion del igual en la uri para obtener el id para luego buscar en el detalle
+            int posicionIgual = item.getUri().indexOf("=");
+            item.setIdCourse(item.getUri().substring(posicionIgual + 1));
+        }
+        
         model.addAttribute("resultados", response);
         model.addAttribute("items", response.getItemsOcw());
         return "resultado";
+    }
+    
+    @RequestMapping(value = "/detallar")
+    public String detallar(int id, ModelMap model) {
+        
+        return "detalle";
     }
 }
